@@ -1,0 +1,44 @@
+ -> Todas as dependências do projeto ficam no arquivo package.json
+ 1. Instalar o express 
+   yarn add express
+ 2. Estrutura de um server ouvindo rotas
+  const express = require("express");
+
+  const app = express();
+
+  app.get("/teste",(req, res) => {
+    return res.send("Hello World");
+  });
+
+  app.listen(3333);
+
+-> use(); serve para cadastrar um módulo dentro do express. Ajuda a entender a requisições que vem em json. 
+json vai ser as respostas que o backend vai mandar para o frontend
+
+-> urlencoded({}) serve para enviar arquivos por meio das requisições.
+
+-> Vai ser usada a arquitetura MVC
+   Models: é como se fosse a abstração das tabelas do banco de dados. Exemplo: se tem uma tabela usuarios, vai
+   vai ter um arquivo js para usuarios
+   Views: o react ou react native
+   Controller: são os caras que recebem as requisições
+
+->instalar o nodemon para que sempre que for feita alterações no arquivo, o servidor vai restartar
+  yarn add nodemon -D(somente para ambiente de dev. Quando publicar, não precisa mais)
+
+-> Utilizar o banco de dados não relacional somente quando houver quase zero relacionamento entre as tabelas
+
+-> MongoDB
+
+ - Não precisa criar uma base de dados porque ao tentar inserir um registro ele já faz isso automaticamente
+ - Precisa fazer a conexão do user que vai inserir os registros
+   security > registrar um usuario > ip adress > colocar para acessar de qualquer local 0.0.0.0
+ -> Para fazer a conexão com o banco basta adicionar a dependencia o server(arquivo principal) e 
+    a funcao connect
+
+ -> GET: buscar uma informação na api
+ -> POST: para criar algo
+ -> PUT: Modificar alguma informação
+ -> DELETE: deletar algo.
+
+ 
